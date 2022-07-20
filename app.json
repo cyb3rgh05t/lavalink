@@ -1,0 +1,6 @@
+{
+    "name": "Lavalink Server",
+    "description": "Deploy Lavalink",
+    "repository": "https://github.com/cyb3rgh05t/lavalink-server",
+    "keywords": ["lavalink", "discord.js", "jda", "wavelink", "lavalink.js"]
+}
