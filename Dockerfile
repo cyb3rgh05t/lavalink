@@ -17,7 +17,7 @@ RUN apk add --no-cache curl bash && \
 USER lavalink
 WORKDIR /opt/lavalink
 
-COPY start.sh /opt/lavalink
+COPY bootstrap.sh /opt/lavalink
 COPY application.example.yml /opt/lavalink
 
-ENTRYPOINT [ "bash", "/opt/lavalink/start.sh" ]
+ENTRYPOINT [ "bash", "/opt/lavalink/bootstrap.sh" ]
