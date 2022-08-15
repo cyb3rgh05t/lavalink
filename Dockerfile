@@ -8,10 +8,6 @@ ENV PORT=2333
 ENV PASSWORD=youshallnotpass
 ENV MEMORY=300M
 
-RUN groupadd -g 322 lavalink && \
-    useradd -r -u 322 -g lavalink lavalink
-USER lavalink
-
 WORKDIR /opt/Lavalink
 
 #COPY Lavalink.jar Lavalink.jar
