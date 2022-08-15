@@ -1,4 +1,6 @@
-FROM azul/zulu-openjdk:13
+ARG BASE=azul/zulu-openjdk-alpine:17
+
+FROM ${BASE} as base
 
 LABEL maintainer=cyb3rgh05t
 LABEL org.opencontainers.image.source https://github.com/cyb3rgh05t/lavalink
@@ -7,9 +9,10 @@ ENV PORT=2333
 ENV PASSWORD=youshallnotpass
 ENV MEMORY=300M
 
-# Run as non-root user
-RUN groupadd -g 322 lavalink && \
-    useradd -r -u 322 -g lavalink lavalink
+RUN apk add --no-cache curl bash && \
+    mkdir /opt/Lavalink && \
+    addgroup -g 443 lavalink && \
+    adduser -S -h /opt/Lavalink -u 443 -G lavalink lavalink
 
 USER lavalink
 WORKDIR /opt/Lavalink
