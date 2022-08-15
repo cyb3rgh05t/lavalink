@@ -4,8 +4,12 @@
 cd "$(dirname "$0")" || exit
 
 echo "Downloading lavalink jar..."
-curl "https://ci.fredboat.com/repository/download/Lavalink_Build/.lastSuccessful/Lavalink.jar?guest=1&branch=refs/heads/dev" -o Lavalink.jar
-echo Lavalink.jar is downloaded...
+curl -s https://api.github.com/repos/freyacodes/Lavalink/releases/latest \
+| grep "browser_download_url.*jar" \
+| cut -d : -f 2,3 \
+| tr -d \" \
+| xargs -I % curl -sLO %
+echo "Lavalink.jar is downloaded..."
 
 echo "Downloading envsubst binary..."
 curl -fsSL "https://github.com/a8m/envsubst/releases/download/v1.2.0/envsubst-$(uname -s)-$(uname -m)" -o envsubst
