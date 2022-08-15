@@ -4,7 +4,7 @@
 cd "$(dirname "$0")" || exit
 
 echo "Downloading lavalink jar..."
-curl -s https://api.github.com/repos/freyacodes/Lavalink/releases/latest \
+curl -s https://api.github.com/repos/freyacodes/Lavalink/releases/74233384 \
 | grep "browser_download_url.*jar" \
 | cut -d : -f 2,3 \
 | tr -d \" \
