@@ -1,6 +1,4 @@
-ARG BASE=azul/zulu-openjdk-alpine:17
-
-FROM ${BASE} as base
+FROM azul/zulu-openjdk:13
 
 LABEL maintainer=cyb3rgh05t
 LABEL org.opencontainers.image.source https://github.com/cyb3rgh05t/lavalink
