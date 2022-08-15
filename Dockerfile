@@ -7,15 +7,16 @@ ENV PORT=2333
 ENV PASSWORD=youshallnotpass
 ENV MEMORY=300M
 
-RUN mkdir /opt/lavalink && \
-    addgroup -g 443 lavalink && \
-    adduser -S -h /opt/lavalink -u 443 -G lavalink lavalink
+# Run as non-root user
+RUN groupadd -g 322 lavalink && \
+    useradd -r -u 322 -g lavalink lavalink
 
 USER lavalink
 WORKDIR /opt/Lavalink
 
-COPY start.sh /opt/lavalink
-COPY application.example.yml /opt/lavalink
+#COPY Lavalink.jar Lavalink.jar
+COPY start.sh /opt/Lavalink
+COPY application.example.yml /opt/Lavalink
 
 ENTRYPOINT [ "bash", "/opt/lavalink/start.sh" ]
 #ENTRYPOINT ["java", "-Djdk.tls.client.protocols=TLSv1.1,TLSv1.2", "-Xmx4G", "-jar", "Lavalink.jar"]
