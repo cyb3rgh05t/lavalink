@@ -1,7 +1,7 @@
 #!/bin/bash
 # Lavalink Bootstrapper
 
-cd /opt/Lavalink || exit
+cd "$(dirname "$0")" || exit
 
 echo "Downloading lavalink jar..."
 curl -s https://api.github.com/repos/freyacodes/Lavalink/releases/latest \
