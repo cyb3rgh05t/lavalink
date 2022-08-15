@@ -7,14 +7,14 @@ ENV PORT=2333
 ENV PASSWORD=youshallnotpass
 ENV MEMORY=300M
 
-# Run as non-root user
-RUN groupadd -g 322 lavalink && \
-    useradd -r -u 322 -g lavalink lavalink
+RUN apk add --no-cache curl bash && \
+    mkdir /opt/lavalink && \
+    addgroup -g 443 lavalink && \
+    adduser -S -h /opt/lavalink -u 443 -G lavalink lavalink
 
 USER lavalink
 WORKDIR /opt/Lavalink
 
-#COPY Lavalink.jar Lavalink.jar
 COPY start.sh /opt/lavalink
 COPY application.example.yml /opt/lavalink
 
