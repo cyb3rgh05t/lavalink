@@ -10,7 +10,7 @@ ENV MEMORY=300M
 
 WORKDIR /opt/Lavalink
 
-#COPY Lavalink.jar Lavalink.jar
+COPY Lavalink.jar Lavalink.jar
 COPY start.sh /opt/Lavalink
 COPY application.example.yml /opt/Lavalink
 
