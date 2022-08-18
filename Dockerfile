@@ -1,4 +1,4 @@
-ARG BASE=fredboat/lavalink:latest
+ARG BASE=fredboat/lavalink:dev
 FROM ${BASE} as base
 
 LABEL maintainer=cyb3rgh05t
@@ -7,6 +7,9 @@ LABEL org.opencontainers.image.source https://github.com/cyb3rgh05t/lavalink
 ENV PORT=2333
 ENV PASSWORD=youshallnotpass
 ENV MEMORY=300M
+
+RUN apt-get -qq update
+RUN apt-get -qq -y install curl
 
 WORKDIR /opt/Lavalink
 
