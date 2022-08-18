@@ -1,4 +1,4 @@
-FROM fredboat/lavalink:dev
+BASE=fredboat/lavalink:dev
 FROM ${BASE} as base
 
 LABEL maintainer=cyb3rgh05t
