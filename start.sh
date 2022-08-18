@@ -3,9 +3,9 @@
 
 cd "$(dirname "$0")" || exit
 
-sudo apt update
-sudo apt upgrade
-sudo apt install curl
+apt update
+apt upgrade
+apt install curl
 
 echo "Downloading lavalink jar..."
 curl -s https://api.github.com/repos/freyacodes/Lavalink/releases/latest \
