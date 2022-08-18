@@ -3,6 +3,10 @@
 
 cd "$(dirname "$0")" || exit
 
+sudo apt update
+sudo apt upgrade
+sudo apt install curl
+
 echo "Downloading lavalink jar..."
 curl -s https://api.github.com/repos/freyacodes/Lavalink/releases/latest \
 | grep "browser_download_url.*jar" \
