@@ -8,6 +8,9 @@ LABEL org.opencontainers.image.source https://github.com/cyb3rgh05t/lavalink
 #ENV PASSWORD=youshallnotpass
 #ENV MEMORY=300M
 
+RUN apt-get -qq update
+RUN apt-get -qq -y install curl
+
 WORKDIR /opt/Lavalink
 
 COPY Lavalink.jar Lavalink.jar
