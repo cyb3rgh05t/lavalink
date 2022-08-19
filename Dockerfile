@@ -14,7 +14,7 @@ WORKDIR /opt/Lavalink
 
 #COPY Lavalink.jar Lavalink.jar
 COPY start.sh /opt/Lavalink
-COPY application.yml /opt/Lavalink
+COPY application.example.yml /opt/Lavalink
 
 ENTRYPOINT [ "bash", "/opt/Lavalink/start.sh" ]
 #ENTRYPOINT ["java", "-Djdk.tls.client.protocols=TLSv1.1,TLSv1.2", "-Xmx4G", "-jar", "Lavalink.jar"]
