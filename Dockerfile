@@ -1,7 +1,7 @@
 FROM alpine/curl
-
-ARG BASE=fredboat/lavalink:dev
-FROM ${BASE} as base
+FROM fredboat/lavalink:dev
+#ARG BASE=fredboat/lavalink:dev
+#FROM ${BASE} as base
 
 LABEL maintainer=cyb3rgh05t
 LABEL org.opencontainers.image.source https://github.com/cyb3rgh05t/lavalink
