@@ -10,7 +10,7 @@ LABEL org.opencontainers.image.source https://github.com/cyb3rgh05t/lavalink
 
 WORKDIR /opt/Lavalink
 
-COPY Lavalink.jar Lavalink.jar
+#COPY Lavalink.jar Lavalink.jar
 COPY start.sh /opt/Lavalink
 COPY application.yml /opt/Lavalink
 
